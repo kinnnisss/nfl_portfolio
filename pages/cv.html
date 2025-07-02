@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV - Ndeye Fatou</title>
+  <link rel="stylesheet" href="../styles/cv.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Ndeye Fatou</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="cv.html" class="active">CV</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="culture.html">Culture</a></li>
+    </ul>
+  </nav>
+
+<header class="cv-header">
+  <div class="cv-photo-wrapper">
+    <img src="../images/cv.jpg" alt="Ndeye Fatou diplômée" class="cv-photo-portrait" />
+  </div>
+  <h1>Ndeye Fatou Lame</h1>
+  <p class="cv-subtitle">Diplômée en Comptabilité & Finance - ESP</p>
+</header>
+
+  <section class="cv-section fade-in-on-scroll">
+    <h2>🎓 Formations</h2>
+    <ul>
+      <li>
+        <strong>2024–2025 :</strong> ESP – DUT en Comptabilité et Finance
+      </li>
+      <li>
+        <strong>2022–2023 :</strong> Collège Notre Dame du Liban – Bac STEG
+      </li>
+    </ul>
+  </section>
+
+  <section class="cv-section fade-in-on-scroll">
+    <h2>💼 Expériences</h2>
+    <ul>
+      <li>Projet tutoriel : Amélioration de la comptabilité d’une petite entreprise (Prof Heureux Business)</li>
+    </ul>
+  </section>
+
+  <section class="cv-section fade-in-on-scroll">
+    <h2>💬 Langues</h2>
+    <p>Français (courant), Anglais (moyen)</p>
+  </section>
+
+  <section class="cv-section fade-in-on-scroll">
+    <h2>🛠 Compétences</h2>
+    <ul class="skills">
+      <li>Fiscalité</li>
+      <li>Contrôle de gestion</li>
+      <li>Sage 100, Excel, Word, PowerPoint</li>
+      <li>Stratégie financière</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ndeye Fatou - Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-on-scroll').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
