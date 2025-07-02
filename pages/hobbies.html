@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hobbies - Ndeye Fatou</title>
+  <link rel="stylesheet" href="../styles/hobbies.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Ndeye Fatou</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="hobbies.html" class="active">Hobbies</a></li>
+      <li><a href="culture.html">Culture</a></li>
+    </ul>
+  </nav>
+
+  <header class="hobbies-header">
+    <h1>🌸 Mes passions</h1>
+    <p>Parce que l'équilibre de l'esprit passe aussi par la créativité, le mouvement et la découverte.</p>
+  </header>
+
+  <section class="hobby-grid">
+    <div class="hobby-item fade-in-on-scroll">
+      <img src="../images/home.jpg" alt="Mode">
+      <div class="text">
+        <h2>👗 Mode</h2>
+        <p>La mode est pour moi un langage. J’aime explorer les tissus, les styles, les influences africaines et modernes pour m’exprimer avec élégance.</p>
+      </div>
+    </div>
+
+    <div class="hobby-item reverse fade-in-on-scroll">
+      <img src="../images/home.jpg" alt="Sport">
+      <div class="text">
+        <h2>🏃‍♀️ Sport</h2>
+        <p>Le sport est un moteur dans ma vie. Il m’aide à garder un esprit clair, une énergie constante et une discipline naturelle.</p>
+      </div>
+    </div>
+
+    <div class="hobby-item fade-in-on-scroll">
+      <img src="../images/home.jpg" alt="Voyage">
+      <div class="text">
+        <h2>✈️ Voyage</h2>
+        <p>Chaque voyage est une ouverture au monde. J’aime découvrir de nouvelles cultures, paysages et traditions qui nourrissent mon regard et mon identité.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ndeye Fatou - Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
