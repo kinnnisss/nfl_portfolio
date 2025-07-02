@@ -53,49 +53,7 @@
     </nav>
     <p>&copy; 2025 Ndeye Fatou - Tous droits réservés.</p>
   </footer>
-  <script>
-const canvas = document.getElementById('backgroundCanvas');
-const ctx = canvas.getContext('2d');
 
-let w, h, hue = 0;
-function resize() {
-  w = canvas.width = window.innerWidth;
-  h = canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resize);
-resize();
-
-let particles = Array.from({length: 100}, () => ({
-  x: Math.random() * w,
-  y: Math.random() * h,
-  r: Math.random() * 2 + 1,
-  dx: Math.random() - 0.5,
-  dy: Math.random() - 0.5
-}));
-
-function animate() {
-  ctx.fillStyle = 'rgba(0,0,0,0.1)';
-  ctx.fillRect(0, 0, w, h);
-
-  hue += 0.5;
-  ctx.fillStyle = `hsl(${hue}, 100%, 60%)`;
-
-  for (let p of particles) {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fill();
-
-    p.x += p.dx;
-    p.y += p.dy;
-
-    if (p.x < 0 || p.x > w) p.dx *= -1;
-    if (p.y < 0 || p.y > h) p.dy *= -1;
-  }
-
-  requestAnimationFrame(animate);
-}
-animate();
-</script>
 
 </body>
 </html>
