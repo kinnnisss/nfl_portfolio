@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Culture - Ndeye Fatou</title>
+  <link rel="stylesheet" href="../styles/culture.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Ndeye Fatou</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="culture.html" class="active">Culture</a></li>
+    </ul>
+  </nav>
+
+  <header class="culture-header">
+    <h1>🎶 L’Héritage des Guéwels</h1>
+    <p>Gardien·ne·s de la mémoire, artistes de la voix, les Guéwels incarnent l’oralité, la musique et l'histoire vivante du Sénégal.</p>
+  </header>
+
+  <section class="culture-grid">
+    <div class="culture-item fade-in-on-scroll">
+      <img src="../images/home.jpg" alt="Guéwel en tenue traditionnelle">
+      <div class="text">
+        <h2>🎤 Qui sont les Guéwels ?</h2>
+        <p>Les Guéwels sont des griots sénégalais. Historiquement, ils chantent l’histoire des familles, louent les lignées, accompagnent les cérémonies, et transmettent la sagesse par la parole et la musique.</p>
+      </div>
+    </div>
+
+    <div class="culture-item reverse fade-in-on-scroll">
+      <img src="../images/home.jpg" alt="Guéwels chantant et jouant du tam-tam">
+      <div class="text">
+        <h2>🥁 Le rôle du tambour</h2>
+        <p>Instrument central, le tam-tam (sabar) rythme les chants et messages. Chaque battement est porteur de sens, appel ou louange, dialogue ou célébration.</p>
+      </div>
+    </div>
+
+    <div class="culture-item fade-in-on-scroll">
+      <img src="../images/home.jpg" alt="Jeune Guéwel en apprentissage">
+      <div class="text">
+        <h2>👶 Transmission intergénérationnelle</h2>
+        <p>La culture guéwel se transmet par observation, écoute et pratique dès l'enfance. Chaque enfant apprend les chants, les rythmes et les récits des ancêtres.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ndeye Fatou - Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
