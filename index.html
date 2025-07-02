@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accueil - Ndeye Fatou</title>
+  <link rel="stylesheet" href="../styles/accueil.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+      <nav class="navbar">
+    <div class="logo">Ndeye Fatou</div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Accueil</a></li>
+      <li><a href="pages/cv.html">CV</a></li>
+      <li><a href="pages/hobbies.html">Hobbies</a></li>
+      <li><a href="pages/culture.html">Culture</a></li>
+    </ul>
+  </nav>
+<header class="hero">
+  <canvas id="backgroundCanvas"></canvas>
+  <div class="intro fade-in">
+    <div class="photo-glow">
+      <img src="../images/moi.jpg" alt="Photo de Ndeye Fatou" class="profil-pic" />
+    </div>
+    <h1 class="typewriter">Ndeye Fatou</h1>
+    <p class="subtitle">Étudiante à <span class="esp">ESP</span> | Curieuse, créative et fière de ses racines</p>
+  </div>
+</header>
+
+
+  <section class="presentation">
+    <div class="bloc">
+      <h2>Qui suis-je ?</h2>
+      <p>Étudiante rigoureuse et curieuse, je poursuis ma formation à l'ESP où je développe mes compétences en ingénierie, culture et créativité.</p>
+    </div>
+    <div class="bloc">
+      <img src="images/etude.jpg" alt="Étude & Développement" />
+      <p>Convaincue que chaque savoir est un pont vers demain, je valorise autant l'excellence académique que l’ouverture culturelle.</p>
+    </div>
+    <div class="bloc">
+      <img src="images/culture.jpg" alt="Culture guéwel" />
+      <p>Je suis fière de ma culture Guéwel, riche de rythmes, d’oralité et de traditions ancestrales que je porte avec amour et respect.</p>
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <a href="accueil.html">Accueil</a>
+      <a href="cv.html">CV</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="culture.html">Culture</a>
+    </nav>
+    <p>&copy; 2025 Ndeye Fatou - Tous droits réservés.</p>
+  </footer>
+  <script>
+const canvas = document.getElementById('backgroundCanvas');
+const ctx = canvas.getContext('2d');
+
+let w, h, hue = 0;
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+let particles = Array.from({length: 100}, () => ({
+  x: Math.random() * w,
+  y: Math.random() * h,
+  r: Math.random() * 2 + 1,
+  dx: Math.random() - 0.5,
+  dy: Math.random() - 0.5
+}));
+
+function animate() {
+  ctx.fillStyle = 'rgba(0,0,0,0.1)';
+  ctx.fillRect(0, 0, w, h);
+
+  hue += 0.5;
+  ctx.fillStyle = `hsl(${hue}, 100%, 60%)`;
+
+  for (let p of particles) {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+
+    p.x += p.dx;
+    p.y += p.dy;
+
+    if (p.x < 0 || p.x > w) p.dx *= -1;
+    if (p.y < 0 || p.y > h) p.dy *= -1;
+  }
+
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
+
+</body>
+</html>
